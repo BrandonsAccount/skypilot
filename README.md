@@ -22,12 +22,13 @@ not just message passing, it’s intelligent orchestration. This is the service 
 consistently, securely, and with the right abstractions for downstream systems.
 
 ## Thinker API <img src="img/thinker.png" alt="Alt text" width="50"/>
-The bridge between Messenger and the model itself. Thinker 
+The bridge between SkyPilot Messenger and the LLM models. This service provides separation of duties between the orchestrator /
+MCP host and the LLM provider.
 
 ## Registry API <img src="img/registry.png" alt="Alt text" width="50"/>
 Every system needs a source of truth. The Registry is the control plane for your MCP servers, keeping track of what’s 
 available, what’s healthy, and what your ecosystem can call on at any moment.
 
 ## MCP Server APIs <img src="img/mcp-servers.png" alt="Alt text" width="50"/>
-Our way of letting Messenger talk to anything. Lightweight, RESTful interfaces for exposing external services into the 
-SkyPilot ecosystem. Add a server, describe its capabilities, and SkyPilot makes it accessible.
+Our way of letting the Messenger API talk to anything. Lightweight, RESTful interfaces for exposing external services into the 
+SkyPilot ecosystem. Add a server, describe its capabilities, and SkyPilot can make it accessible via the Registry API.
