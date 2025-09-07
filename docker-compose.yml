@@ -1,0 +1,47 @@
+version: "3.8"
+
+services:
+  skypilot-thinker:
+    build:
+      context: ../skypilot-thinker
+      # If your Dockerfile is named differently, set dockerfile: Dockerfile
+    image: skypilot-thinker:latest
+    container_name: skypilot-thinker
+    env_file:
+      - ../skypilot-thinker/conf/.env.local
+    ports:
+      - "8008:8008"        # Exposes thinker on host:8000 (adjust if your app uses another port)
+    networks:
+      - skypilot
+
+  skypilot-messenger:
+    build:
+      context: ../skypilot-messenger
+    image: skypilot-messenger:latest
+    container_name: skypilot-messenger
+    env_file:
+      - ../skypilot-messenger/conf/.env.local
+    ports:
+      - "8000:8000"
+    networks:
+      - skypilot
+    depends_on:
+      - skypilot-thinker
+
+  skypilot-gui:
+    build:
+      context: ../skypilot-gui
+    image: skypilot-gui:latest
+    container_name: skypilot-gui
+    env_file:
+      - ../skypilot-gui/conf/.env.local
+    ports:
+      - "3000:3000"
+    networks:
+      - skypilot
+    depends_on:
+      - skypilot-messenger
+
+networks:
+  skypilot:
+    driver: bridge

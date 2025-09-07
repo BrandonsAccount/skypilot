@@ -1,6 +1,4 @@
-<h3 align="center"><img src="img/skypilot.png" height="100"></h3>
-<!-- https://raw.githubusercontent.com/brandonsaccount/skypilot-vscode-extension/rough-in-skypilot-provider/ -->
-
+<h3 align="center"><img src="img/skypilot-white-logo.png" width="100px"><br />SkyPilot</h3>
 ## A collection of services for SkyPilot MCP.
 
 SkyPilot (aka SkyPilot MCP) provides loosely coupled, modular services for building AI chat platform.
