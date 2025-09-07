@@ -1,6 +1,6 @@
 <h3 align="center"><img src="img/skypilot-white-logo.png" width="100px"><br />SkyPilot</h3>
-## A collection of services for SkyPilot MCP.
 
+## A collection of services for SkyPilot MCP.
 SkyPilot (aka SkyPilot MCP) provides loosely coupled, modular services for building AI chat platform.
 
 ## GUI <img src="img/gui.png" alt="Alt text" width="50"/>
